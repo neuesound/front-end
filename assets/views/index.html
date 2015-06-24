@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nomad Travelling</title>
+
+  <link rel="stylesheet" href="../stylesheet/main.css">
+</head>
+<body>
+  <h1>Nomad Travelling</h1>
+
+  <form action="">
+    <label for="">I want to go to ...</label>
+    <input type="text" id="autocomplete">
+
+    <button>Let's Go!</button>
+  </form>
+
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&language=en"></script>
+
+
+  <script>
+  var defaultBounds = new google.maps.LatLngBounds(
+    new google.maps.LatLng(-33.8902, 151.1759),
+    new google.maps.LatLng(-33.8474, 151.2631));
+
+  var input = document.getElementById('autocomplete');
+  var options = {
+    bounds: defaultBounds,
+    types: ['geocode']
+  };
+
+  autocomplete = new google.maps.places.Autocomplete(input, options);</script>
+</body>
+</html>
